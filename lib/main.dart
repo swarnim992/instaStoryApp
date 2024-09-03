@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:instastoryapp/screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const Screen());
 }
 
 class MyApp extends StatelessWidget {

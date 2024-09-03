@@ -11,3 +11,15 @@ class StoryModel {
 
   final String imageUrl;
 }
+
+class UserProfile{
+  final String profilePic;
+  final String name;
+  final String username;
+  final String last;
+  final String status;
+
+  final List<StoryModel> stories;
+
+  UserProfile(this.profilePic, this.name, this.username, this.last, this.status, this.stories);
+}

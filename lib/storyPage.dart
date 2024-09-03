@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:instastoryapp/models.dart';
 import 'package:story/story_image.dart';
 import 'package:story/story_page_view.dart';
 
 import 'constants/constants.dart';
 
 class StoryPage extends StatefulWidget {
-  const StoryPage({Key? key}) : super(key: key);
+  final UserProfile userProfile;
+  const StoryPage({Key? key, required this.userProfile}) : super(key: key);
 
   @override
   _StoryPageState createState() => _StoryPageState();
@@ -23,7 +25,7 @@ class _StoryPageState extends State<StoryPage> {
 
   @override
   void dispose() {
-    indicatorAnimationController.dispose();
+    // indicatorAnimationController.dispose();
     super.dispose();
   }
 
@@ -32,8 +34,8 @@ class _StoryPageState extends State<StoryPage> {
     return Scaffold(
       body: StoryPageView(
         itemBuilder: (context, pageIndex, storyIndex) {
-          final user = sampleUsers[pageIndex];
-          final story = user.stories[storyIndex];
+          // final user = sampleUsers[pageIndex];
+          final story = widget.userProfile.stories[storyIndex];
           return Stack(
             children: [
               Positioned.fill(
@@ -57,7 +59,7 @@ class _StoryPageState extends State<StoryPage> {
                       width: 32,
                       decoration: BoxDecoration(
                         image: DecorationImage(
-                          image: Video(user.imageUrl),
+                          image: AssetImage(widget.userProfile.profilePic),
                           fit: BoxFit.cover,
                         ),
                         shape: BoxShape.circle,
@@ -67,7 +69,7 @@ class _StoryPageState extends State<StoryPage> {
                       width: 8,
                     ),
                     Text(
-                      user.userName,
+                      widget.userProfile.username,
                       style: const TextStyle(
                         fontSize: 17,
                         color: Colors.white,
@@ -80,6 +82,7 @@ class _StoryPageState extends State<StoryPage> {
             ],
           );
         },
+
         gestureItemBuilder: (context, pageIndex, storyIndex) {
           return Stack(children: [
             Align(
@@ -91,54 +94,29 @@ class _StoryPageState extends State<StoryPage> {
                   color: Colors.white,
                   icon: const Icon(Icons.close),
                   onPressed: () {
-                    Navigator.pop(context);
+                    // Navigator.pop(context);
                   },
                 ),
               ),
             ),
-            if (pageIndex == 0)
-              Center(
-                child: ElevatedButton(
-                  child: const Text('show modal bottom sheet'),
-                  onPressed: () async {
-                    indicatorAnimationController.value =
-                        IndicatorAnimationCommand.pause;
-                    await showModalBottomSheet(
-                      context: context,
-                      builder: (context) => SizedBox(
-                        height: MediaQuery.of(context).size.height / 2,
-                        child: Padding(
-                          padding: const EdgeInsets.all(24),
-                          child: Text(
-                            'Look! The indicator is now paused\n\n'
-                                'It will be coutinued after closing the modal bottom sheet.',
-                            style: Theme.of(context).textTheme.headlineSmall,
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                      ),
-                    );
-                    indicatorAnimationController.value =
-                        IndicatorAnimationCommand.resume;
-                  },
-                ),
-              ),
           ]);
         },
+
         indicatorAnimationController: indicatorAnimationController,
+
         initialStoryIndex: (pageIndex) {
           if (pageIndex == 0) {
             return 1;
           }
           return 0;
         },
-        pageLength: sampleUsers.length,
+        pageLength: 1,
         storyLength: (int pageIndex) {
-          return sampleUsers[pageIndex].stories.length;
+          return widget.userProfile.stories.length;
         },
-        onPageLimitReached: () {
-          Navigator.pop(context);
-        },
+        // onPageLimitReached: () {
+        //   Navigator.pop(context);
+        // },
 
       ),
     );
