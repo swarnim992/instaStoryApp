@@ -15,6 +15,7 @@ final sampleUsers = [
   ], "User1",
       'https://www.hubspot.com/hs-fs/hubfs/parts-url_1.webp?width=595&height=400&name=parts-url_1.webp'
   ),
+
   UserModel([
     StoryModel(
         "https://images.unsplash.com/photo-1609439547168-c973842210e1?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4Nnx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"),
@@ -39,9 +40,6 @@ final profiles = [
     '34m',
     'catch me if you can',
       [
-        // StoryModel(
-        //   'assets/videos/1.mp4'
-        // ),
         StoryModel(
             'https://www.hubspot.com/hs-fs/hubfs/parts-url_1.webp?width=595&height=400&name=parts-url_1.webp'
         ),
@@ -53,14 +51,11 @@ final profiles = [
   ),
   UserProfile(
       'assets/photos/2.png',
-      'Pankaj Tripathi',
-      'pankaj12',
+      'Munna Bhaiya',
+      'munna12',
       '34m',
-      'catch me if you can',
+      'catch me if you can, catch me if you cancatch me if you can',
       [
-        // StoryModel(
-        //   'assets/videos/1.mp4'
-        // ),
         StoryModel(
             'https://www.hubspot.com/hs-fs/hubfs/parts-url_1.webp?width=595&height=400&name=parts-url_1.webp'
         ),
