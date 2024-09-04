@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:instastoryapp/constants/constants.dart';
 import 'package:instastoryapp/models.dart';
-import 'package:instastoryapp/storyPage.dart';
+import 'package:instastoryapp/story/storyPage.dart';
 
 class Screen extends StatefulWidget {
   const Screen({super.key});
@@ -36,7 +36,7 @@ class _ScreenState extends State<Screen> {
               
                   Obx(() => Container(
                       // height: 700,
-                      child: singleStoryPage(profiles[mainIndex.value] , Key(mainIndex.value.toString()))),
+                      child: singleStoryPage1(profiles[mainIndex.value] , Key(mainIndex.value.toString()))),
                   ),
               
                   // Positioned(
