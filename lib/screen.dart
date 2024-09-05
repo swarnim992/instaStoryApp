@@ -36,7 +36,9 @@ class _ScreenState extends State<Screen> {
               
                   Obx(() => Container(
                       // height: 700,
-                      child: singleStoryPage1(profiles[mainIndex.value] , Key(mainIndex.value.toString()))),
+                      child: StoryPage(key: Key(mainIndex.value.toString()), userProfile:profiles[mainIndex.value] ,)
+                      // singleStoryPage1(profiles[mainIndex.value] , Key(mainIndex.value.toString()))
+                  ),
                   ),
               
                   // Positioned(
