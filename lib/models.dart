@@ -18,8 +18,9 @@ class UserProfile{
   final String username;
   final String last;
   final String status;
+  final String emoji;
 
-  final List<StoryModel> stories;
+  final List<int> stories;
 
-  UserProfile(this.profilePic, this.name, this.username, this.last, this.status, this.stories);
+  UserProfile(this.profilePic, this.name, this.username, this.last, this.status, this.stories, this.emoji);
 }
