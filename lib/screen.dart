@@ -8,7 +8,6 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:instastoryapp/constants/constants.dart';
 import 'package:instastoryapp/models.dart';
-import 'package:instastoryapp/story/storyPage.dart';
 import 'package:instastoryapp/story/videoStroyPage.dart';
 import 'package:story/story_page_view.dart';
 
